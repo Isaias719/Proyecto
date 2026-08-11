@@ -2,18 +2,15 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Si tu rama principal se llama 'master', cámbialo a "master"
+    branches: ["main"] # Si tu rama principal es 'master', cámbialo a "master"
 
-  # Permite ejecutar este flujo manualmente desde la pestaña Actions
   workflow_dispatch:
 
-# Otorga permisos al GITHUB_TOKEN para hacer el despliegue
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite un solo despliegue a la vez
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -43,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Si tu compilador usa otra carpeta (ej. 'build'), cámbialo aquí
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
