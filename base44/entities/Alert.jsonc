@@ -1,0 +1,27 @@
+{
+  "name": "Alert",
+  "type": "object",
+  "properties": {
+    "producto_id": {
+      "type": "string"
+    },
+    "producto_nombre": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string",
+      "default": "stock_bajo"
+    },
+    "mensaje": {
+      "type": "string"
+    },
+    "leido": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "producto_id",
+    "mensaje"
+  ]
+}
